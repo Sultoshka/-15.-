@@ -1,0 +1,33 @@
+Index: BOT.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/BOT.py b/BOT.py
+--- a/BOT.py	
++++ b/BOT.py	(date 1714870084236)
+@@ -9,12 +9,14 @@
+                      reply_markup=buttons.choice())
+     bot.register_next_step_handler(message, int)
+ 
+-    @bot.message_handler(content_types=['text'])
+-    def text(message):
+-        user_id = message.from_user.id
+-        if message.text.lower() == 'wikipedia':
+-            bot.send_message(user_id, 'Введите слово')
+-            bot.register_next_step_handler(message, USD)
+-        elif message.text.lower() == 'translate':
++
++
++@bot.message_handler(content_types=['text'])
++def text(message):
++    user_id = message.from_user.id
++        if message.text.lower() == 'USD':
++        bot.send_message(user_id, 'Введите слово')
++        bot.register_next_step_handler(message, usd)
++        elif message.text.lower() == 'usd':
+             bot.send_message(user_id, 'Введите слово для перевода')
+-            bot.register_next_step_handler(message, trans)
+\ No newline at end of file
++            bot.register_next_step_handler(message, uzs)
+\ No newline at end of file
